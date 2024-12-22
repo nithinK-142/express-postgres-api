@@ -11,6 +11,7 @@ import handleResponse from "../middlewares/responseHandler.js";
 export const getAllUsers = async (req, res, next) => {
   try {
     const users = await getAllUsersService();
+    if (users.length === 0) return handleResponse(res, 200, "No users found");
     handleResponse(res, 200, "Users fetched successfully", users);
   } catch (error) {
     next(error);

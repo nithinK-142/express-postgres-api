@@ -15,7 +15,7 @@ docker pull postgres
 
 #### Run the PostgreSQL Container
 ```bash
-docker run --name postgres-db -e POSTGRES_PASSWORD=8080 -p :5432 -d postgres
+docker run --name postgres-db -e POSTGRES_PASSWORD=8080 -p 5432:5432 -d postgres
 ```
 **Note:** Port mapping is dynamic in this setup to avoid errors that occurred when specifying a static port.
 
