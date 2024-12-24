@@ -1,4 +1,4 @@
-# Express PostgreSQL API Documentation
+# Express PostgreSQL API
 
 ## Setup PostgreSQL using Docker
 
