@@ -1,0 +1,19 @@
+services:
+  postgres-db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: 8080
+      POSTGRES_USER: postgres
+      POSTGRES_DB: express-crud
+  app:
+    build: .
+    ports:
+      - 3001:3001
+    environment:
+      - DB_HOST=postgres-db
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=8080
+      - DB_NAME=express-crud
+    depends_on:
+      - postgres-db
