@@ -33,5 +33,4 @@ pool.on("connect", () => {
   console.log("New pool connection established");
 });
 
-await connectWithRetry();
-export default pool;
+export { pool, connectWithRetry };
