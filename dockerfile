@@ -1,7 +1,8 @@
+# Use Node.js base image
 FROM node:18-alpine
 
-# Use Node.js base image
-FROM node:18
+# Install pnpm globally
+RUN npm install -g pnpm
 
 # Set the working directory in the container
 WORKDIR /app
@@ -10,7 +11,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # install dependencies
-RUN npm install
+RUN pnpm install
 
 # Copy the rest of the application code
 COPY . .
@@ -19,4 +20,4 @@ COPY . .
 EXPOSE 3001
 
 # Start the application
-CMD ["node", "src/server.js"]
+CMD ["pnpm", "start"]
