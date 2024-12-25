@@ -1,0 +1,40 @@
+@baseUrl = http://localhost:3001/api/
+@userId = 1
+
+### Get all users
+GET {{baseUrl}}/user
+Content-Type: application/json
+
+###
+
+### Get a user by ID
+GET {{baseUrl}}/user/{{userId}}
+Content-Type: application/json
+
+###
+
+### Create a new user
+POST {{baseUrl}}/user
+Content-Type: application/json
+
+{
+  "name": "Homelander",
+  "email": "the@seven.com"
+}
+
+###
+
+### Update a user
+PUT {{baseUrl}}/user/{{userId}}
+Content-Type: application/json
+
+{
+  "name": "President Homelander",
+  "email": "homelanders@seven.com"
+}
+
+###
+
+### Delete a user
+DELETE {{baseUrl}}/user/{{userId}}
+Content-Type: application/json
